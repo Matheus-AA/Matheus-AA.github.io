@@ -62,7 +62,7 @@
 .footer-copy {
   font-size: 1.125rem;
   color: #8f8f8f;
-  grid-row: 3;
+  grid-row: 4;
 }
 
 @media (max-width: 800px) {
