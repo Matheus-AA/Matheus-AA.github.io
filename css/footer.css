@@ -3,13 +3,23 @@
   background-color: #000;
 }
 
+.contato-icons {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contato-icons a {
+  align-self: center;
+}
+
 .footer-container {
   max-width: 1200px;
   padding: 120px 20px 60px 20px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 100px;
+  gap: 50px 100px;
   align-items: center;
 }
 
@@ -26,11 +36,22 @@
   line-height: 1.1;
   color: #fff;
   margin-bottom: 30px;
-  border-bottom: solid 3px transparent;
+  position: relative;
 }
 
-.footer-contato li:hover {
-  border-bottom: solid 3px #67dd0a;
+.footer-contato li::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0px;
+  background-color: #67dd0a;
+  margin-top: 4px;
+  transition: 0.4s;
+  position: absolute;
+}
+
+.footer-contato li:hover::after {
+  width: 100%;
 }
 
 .footer-contato li a {
@@ -41,10 +62,19 @@
 .footer-copy {
   font-size: 1.125rem;
   color: #8f8f8f;
-  grid-column: 1 / -1;
+  grid-row: 3;
 }
 
 @media (max-width: 800px) {
+
+  .contato-icons {
+    justify-content: center;
+  }
+
+  .footer-contato li::after {
+    display: none;
+  }
+
   .footer {
     border-top: solid 3px #67dd0a;
   }
